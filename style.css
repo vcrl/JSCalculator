@@ -32,8 +32,7 @@ body{
 }
 
 .mainArea{
-    border:2px solid red;
-    padding: 10vh;
+    padding: 10vh 33vw;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -52,41 +51,23 @@ body{
     color: white;
     font-size: 6em;
     display: flex;
+    flex-direction: column;
     justify-content: end;
     align-items:flex-end;
     padding: 2em;
     padding-bottom: 1em;
     box-sizing: border-box;
-    border-top-left-radius: .5em;
-    border-top-right-radius: .5em;
 }
 
-#calculatorText{
-    border: 2px solid red;
-}
-
-.topRow button,
-#add,
-#substract,
-#multiply,
-#divide,
-#result,
-#comma,
-#one, #two, #three, #four, #five, #six, #seven, #eight, #nine, #zero{
-    background: #384054;
-    color:#fffffd;
-    font-weight: bold;
-    box-sizing:border-box;
-    padding:1vh 2vw;
-    font-size: 3em;
-    border: 1px solid #2b3038;
+#oldNumber{
+    color:rgb(162, 164, 165);
+    font-size: .75em;
 }
 
 /* TOP ROW */
 .topRow{
     display: flex;
     justify-content: space-between;
-    width: 100%;
 }
 
 .topRow #ac{
@@ -97,3 +78,89 @@ body{
     width: 50%;
 }
 
+/* COMMON */
+
+.topRow button,
+#add, #substract, #multiply,
+#result, #divide, #comma,
+#one, #two, #three, #four, 
+#five, #six, #seven, 
+#eight, #nine, #zero,
+#NA, #NA_botleft, #NA_botright,
+#NA_topleft, #NA_topright,
+#topScreenRow
+{
+    background: #384054;
+    color:#fffffd;
+    font-weight: bold;
+    box-sizing:border-box;
+    padding:2vh;
+    font-size: 3em;
+    border:none;
+}
+
+#add:hover, #substract:hover, #multiply:hover,
+#divide:hover, #comma:hover,
+#ac:hover, #negative:hover{
+    background: #313849;
+}
+
+button{
+    flex:1;
+}
+
+#seven, #eight, #nine,
+#four, #five, #six,
+#three, #two, #one, #zero{
+    background-color:#5c677e;
+}
+
+#seven:hover, #eight:hover, #nine:hover,
+#four:hover, #five:hover, #six:hover,
+#three:hover, #two:hover, #one:hover, #zero:hover{
+    background-color:#545e74;
+}
+
+/* ROWS */
+.firstRow,
+.secondRow, .thirdRow, 
+.fourthRow, .fifthRow,
+.topScreenRow{
+    display: flex;
+    justify-content: space-between;
+}
+
+.topScreenRow{
+    width: 100%;
+}
+
+/* RESULT */
+#result{
+    background:linear-gradient(to right,#ff006c, 10%,#fead00);
+}
+
+#result:hover{
+    background:linear-gradient(to right,#e60261, 10%,#eca202);
+}
+
+/* Not Attributed buttons */
+#NA_botleft{
+    border-bottom-left-radius: 1em;
+}
+
+#NA_botright{
+    border-bottom-right-radius: 1em;
+}
+
+#NA_topleft{
+    border-top-left-radius: .5em;
+}
+
+#NA_topright{
+    border-top-right-radius: .5em;
+}
+
+.fifthRow #NA, #NA_botleft, #NA_botright,
+#NA_topleft, #NA_topright, .topScreenRow #NA{
+    background: #313849;
+}

@@ -16,6 +16,7 @@ let btnResult = document.getElementById("result");
 let btnAC = document.getElementById("ac");
 
 let displayScreen = document.getElementById("calculatorText");
+let oldNumberOnScreen = document.getElementById("oldNumber")
 
 let oldNumber = null;
 let currentNumber = null;
@@ -31,27 +32,32 @@ function clickBtn(btn){
             oldNumber = parseFloat(displayScreen.innerHTML);
             calculationType = "add";
             clearScreen()
+            displayOldNumberOnScreen();
             break;
         case "substract":
             oldNumber = parseFloat(displayScreen.innerHTML);
             calculationType = "substract";
             clearScreen()
+            displayOldNumberOnScreen()
             break;
         case "multiply":
             oldNumber = parseFloat(displayScreen.innerHTML);
             calculationType = "multiply";
             clearScreen()
+            displayOldNumberOnScreen();
             break;
         case "divide":
             oldNumber = parseFloat(displayScreen.innerHTML);
             calculationType = "divide";
             clearScreen()
+            displayOldNumberOnScreen();
             break;
         case "result":
+            oldNumberOnScreen.innerHTML = "";
             displayScreen.innerHTML = makeCalculation(calculationType);
             break;
         case "comma":
-            displayScreen.innerHTML = displayScreen.innerHTML + ".";
+            displayScreen.innerHTML ? displayScreen.innerHTML = displayScreen.innerHTML + "." : null;
             break;
         case "negative":
             // Doit redevenir positif si on click une deuxième fois
@@ -71,6 +77,7 @@ function clearScreen(clearNumbers = false){
     if(clearNumbers){
         oldNumber = null;
         currentNumber = null;
+        oldNumberOnScreen.innerHTML = "";
     }
     displayScreen.innerHTML = "";
 }
@@ -93,4 +100,8 @@ function makeCalculation(calculationType){
             }
             break;
     }
+}
+
+function displayOldNumberOnScreen(){
+    oldNumber ? oldNumberOnScreen.innerHTML = oldNumber.toString() : null;
 }
