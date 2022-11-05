@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8"/>
+        <link href="./style.css" rel="stylesheet" >
+        <title>Calculator</title>
+    </head>
+
+    <body>
+        <div class="navigation">
+            <li class="top_menu">
+                <ul class="menu_logo">JSCalculation</ul>
+                <ul class="linkedin_link">LinkedIn</ul>
+                <ul class="github_link">Github</ul>
+            </li>
+        </div>
+        <!-- Body Area -->
+        <div class="mainArea">
+            <div class="calculatorScreen">
+                <div id="calculatorText">
+                </div>
+            </div>
+            
+            <div class="calculatorBtnsArea">
+                <div class="topRow">
+                    <button id="ac" onclick="clickBtn('ac')">AC</button>
+                    <button id="negative" onclick="clickBtn('negative')">-/+</button>
+                </div>
+                <div class="firstRow">
+                    <button id="seven" onclick="clickBtn('7')">7</button>
+                    <button id="eight" onclick="clickBtn('8')">8</button>
+                    <button id="nine" onclick="clickBtn('9')">9</button>
+                    <button id="add" onclick="clickBtn('add')">+</button>
+                </div>
+                
+                <div class="secondRow">
+                    <button id="four" onclick="clickBtn('4')">4</button>
+                    <button id="five" onclick="clickBtn('5')">5</button>
+                    <button id="six" onclick="clickBtn('6')">6</button>
+                    <button id="substract" onclick="clickBtn('substract')">-</button>
+                </div>
+                
+                <div class="thirdRow">
+                    <button id="one" onclick="clickBtn('1')">1</button>
+                    <button id="two" onclick="clickBtn('2')">2</button>
+                    <button id="three" onclick="clickBtn('3')">3</button>
+                    <button id="multiply" onclick="clickBtn('multiply')">*</button>
+                </div>
+                <div class="fourthRow">
+                    <button id="comma" onclick="clickBtn('comma')">.</button>
+                    <button id="zero" onclick="clickBtn('0')">0</button>
+                    <button id="result" onclick="clickBtn('result')">=</button>
+                    <button id="divide" onclick="clickBtn('divide')">/</button>
+                </div>
+            </div>
+        </div>
+        <!-- JS -->
+        <script src="./script.js"></script>
+    </body>
+
+</html>
