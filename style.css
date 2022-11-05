@@ -26,8 +26,14 @@ body{
     font-size: 3em;
 }
 
-.github_link{
+.github_link a{
+    text-decoration: none;
+    color: white;
     font-size: 2em;
+}
+
+.github_link a:hover{
+    color: #d4e1f1;
 }
 
 .mainArea{
