@@ -68,7 +68,11 @@ function clickBtn(btn){
             }
             break;
         default:
-            displayScreen.innerHTML = displayScreen.innerHTML + btn;
+            if(displayScreen.innerHTML[0] == "0"){
+                displayScreen.innerHTML = btn;
+            }else{
+                displayScreen.innerHTML = displayScreen.innerHTML + btn;
+            }
             
     }
 }
@@ -79,7 +83,7 @@ function clearScreen(clearNumbers = false){
         currentNumber = null;
         oldNumberOnScreen.innerHTML = "";
     }
-    displayScreen.innerHTML = "";
+    displayScreen.innerHTML = "0";
 }
 
 function makeCalculation(calculationType){
