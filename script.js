@@ -60,12 +60,14 @@ function clickBtn(btn){
             displayScreen.innerHTML ? displayScreen.innerHTML = displayScreen.innerHTML + "." : null;
             break;
         case "negative":
-            // Doit redevenir positif si on click une deuxième fois
-            if(displayScreen.innerHTML[0] != "-"){
-                displayScreen.innerHTML = "-" + displayScreen.innerHTML;
-            }else{
-                displayScreen.innerHTML = displayScreen.innerHTML.toString().slice(1);
+            if(displayScreen.innerHTML[0] != "0"){
+                if(displayScreen.innerHTML[0] != "-"){
+                    displayScreen.innerHTML = "-" + displayScreen.innerHTML;
+                }else{
+                    displayScreen.innerHTML = displayScreen.innerHTML.toString().slice(1);
+                }
             }
+            
             break;
         default:
             if(displayScreen.innerHTML[0] == "0"){
