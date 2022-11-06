@@ -57,7 +57,10 @@ function clickBtn(btn){
             displayScreen.innerHTML = makeCalculation(calculationType);
             break;
         case "comma":
-            displayScreen.innerHTML ? displayScreen.innerHTML = displayScreen.innerHTML + "." : null;
+            if(displayScreen.innerHTML){
+                displayScreen.innerHTML = displayScreen.innerHTML + ".";
+                console.log("Added comma")
+            }
             break;
         case "negative":
             if(displayScreen.innerHTML[0] != "0"){
@@ -70,7 +73,7 @@ function clickBtn(btn){
             
             break;
         default:
-            if(displayScreen.innerHTML[0] == "0"){
+            if(displayScreen.innerHTML[0] === ""){
                 displayScreen.innerHTML = btn;
             }else{
                 displayScreen.innerHTML = displayScreen.innerHTML + btn;
@@ -85,7 +88,7 @@ function clearScreen(clearNumbers = false){
         currentNumber = null;
         oldNumberOnScreen.innerHTML = "";
     }
-    displayScreen.innerHTML = "0";
+    displayScreen.innerHTML = "";
 }
 
 function makeCalculation(calculationType){
